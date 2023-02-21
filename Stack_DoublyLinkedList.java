@@ -1,5 +1,6 @@
 // Implementation of lists, using doubly linked elements.
 // (c) 1998, 2001 duane a. bailey
+
 import structure.DoublyLinkedList;
 
 public class Stack_DoublyLinkedList<T> extends Stack{

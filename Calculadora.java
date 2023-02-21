@@ -11,7 +11,6 @@ import java.util.ArrayList;
  */
 
 public class Calculadora<T> {
-
     static PostfixCalculator calculadora = new PostfixCalculator();
     private static Stack<Integer> stack;
     static ArrayList<String> operaciones;

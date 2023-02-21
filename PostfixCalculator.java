@@ -81,7 +81,7 @@ public class PostfixCalculator<T> {
      */
     public ArrayList<String> getItems(String _expresion) {
 
-        String[] elements = _expresion.split(" ");
+        String[] elements = _expresion.split("");
 
         return new ArrayList<String>(Arrays.asList(elements));
     }

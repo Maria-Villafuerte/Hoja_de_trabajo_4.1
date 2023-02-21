@@ -1,6 +1,6 @@
 // An implementation of extensible arrays.
 // (c) 1998, 2001 duane a. bailey
-// $Id: Vector.java 31 2007-08-06 17:19:56Z bailey $
+// $Id: Stack_Vector.java 31 2007-08-06 17:19:56Z bailey $
 
 package structure5;
 import java.util.Iterator;
@@ -29,7 +29,7 @@ import java.util.Collection;
  * }
  * </pre>
  *
- * @version $Id: Vector.java 31 2007-08-06 17:19:56Z bailey $
+ * @version $Id: Stack_Vector.java 31 2007-08-06 17:19:56Z bailey $
  * @since JavaStructures 1.0
  */
 public class Vector<E> extends AbstractList<E> implements Cloneable

@@ -24,9 +24,9 @@ public static ArrayList<String> _readfile(String fpath) {
 
     String data = "";
     ArrayList<String> total = new ArrayList<>();
-  
+
+
     try {
-  
         File myObj = new File(fpath);
         Scanner myReader = new Scanner(myObj);
   

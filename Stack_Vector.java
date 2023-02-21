@@ -2,7 +2,7 @@
 // An implementation of extensible arrays.
 // (c) 1998, 2001 duane a. bailey
 import structure.StackVector;
-public class Vector<T> extends Stack{
+public class Stack_Vector<T> extends Stack{
     StackVector stackVector = new StackVector();
     @Override
     public int count() {

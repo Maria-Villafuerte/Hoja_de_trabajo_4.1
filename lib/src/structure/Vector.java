@@ -28,7 +28,7 @@ import java.util.Collection;
  * }
  * </pre>
  *
- * @version $Id: Vector.java 31 2007-08-06 17:19:56Z bailey $
+ * @version $Id: Stack_Vector.java 31 2007-08-06 17:19:56Z bailey $
  * @since JavaStructures 1.0
  */
 public class Vector extends AbstractList implements Cloneable

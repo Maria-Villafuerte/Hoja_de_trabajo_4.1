@@ -6,7 +6,7 @@ package structure5;
  *
  * Typical use:
  * <pre>
- *      List l = new DoublyLinkedList();
+ *      IList l = new DoublyLinkedList();
  *      // ...list gets built up...
  *      Iterator li = l.iterator();
  *      while (li.hasNext())

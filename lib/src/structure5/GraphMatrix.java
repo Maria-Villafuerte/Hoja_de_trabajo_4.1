@@ -43,7 +43,7 @@ abstract public class GraphMatrix<V,E>
      */
     protected Map<V,GraphMatrixVertex<V>> dict;   // labels -> vertices
     /**
-     * List of free vertex indices within graph.
+     * IList of free vertex indices within graph.
      */
     protected List<Integer> freeList;    // available indices in matrix
     /**

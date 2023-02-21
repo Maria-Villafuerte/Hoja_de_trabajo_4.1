@@ -8,7 +8,7 @@ package structure;
  *
  * Typical use:
  * <pre>
- *      List l = new SinglyLinkedList();
+ *      IList l = new SinglyLinkedList();
  *      // ...list gets built up...
  *      Iterator li = l.iterator();
  *      while (li.hasNext())

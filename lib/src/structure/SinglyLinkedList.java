@@ -115,7 +115,7 @@ public class SinglyLinkedList extends AbstractList
     {
         Node finger = head;
         Node previous = null;
-        Assert.pre(head != null,"List is not empty.");
+        Assert.pre(head != null,"IList is not empty.");
         while (finger.next() != null) // find end of list
         {
             previous = finger;
@@ -160,7 +160,7 @@ public class SinglyLinkedList extends AbstractList
     public Object getLast()
     {
         Node finger = head;
-        Assert.condition(finger != null,"List is not empty.");
+        Assert.condition(finger != null,"IList is not empty.");
         while (finger != null &&
                finger.next() != null)
         {

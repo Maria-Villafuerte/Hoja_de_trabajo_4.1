@@ -42,7 +42,7 @@ abstract public class GraphMatrix extends AbstractStructure implements Graph
      */
     protected Map dict;   // translates labels->vertices
     /**
-     * List of free vertex indices within graph.
+     * IList of free vertex indices within graph.
      */
     protected List freeList;    // available indices in matrix
     /**

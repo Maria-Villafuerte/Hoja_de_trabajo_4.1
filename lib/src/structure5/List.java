@@ -7,14 +7,14 @@ import java.util.Iterator;
  * Interface describing lists.  Lists are collections of data with
  * a head and tail.  Values may be added or removed from either end,
  * as well as by value from the middle.
- * The structure package provides several implementations of the List interface, 
+ * The structure package provides several implementations of the IList interface,
  * each of which has its particular strengths and weaknesses.
  *  
  * <P>
  * Example usage:
  * <P>
  * To place a copy of every unique parameter passed to a program into a 
- * List, we could use the following:
+ * IList, we could use the following:
  * <pre>
  * public static void main({@link java.lang.String String[]} arguments)
  * {
@@ -27,7 +27,7 @@ import java.util.Iterator;
  *    System.out.println(argList);
  * }
  * </pre>
- * @version $Id: List.java 22 2006-08-21 19:27:26Z bailey $
+ * @version $Id: IList.java 22 2006-08-21 19:27:26Z bailey $
  * @author, 2001 duane a. bailey
  * @see SinglyLinkedList
  * @see DoublyLinkedList

@@ -28,6 +28,6 @@ public class Stack_DoublyLinkedList<T> extends Stack{
 
     @Override
     public Object peek() {
-        return doublyLinkedList;
+        return doublyLinkedList.getFirst();
     }
 }

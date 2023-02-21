@@ -10,7 +10,7 @@ package structure5;
  * Typical use:
  * <P>
  * <pre>
- *      List l = new CircularList();
+ *      IList l = new CircularList();
  *      // ...list gets built up...
  *      Iterator li = l.iterator();
  *      while (li.hasNext())

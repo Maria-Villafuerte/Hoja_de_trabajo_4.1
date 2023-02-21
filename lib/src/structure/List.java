@@ -8,7 +8,7 @@ import java.util.Iterator;
  * a head and tail.  Values may be added or removed from either end,
  * as well as by value from the middle.
  *
- * @version $Id: List.java 8 2006-08-02 19:03:11Z bailey $
+ * @version $Id: IList.java 8 2006-08-02 19:03:11Z bailey $
  * @author, 2001 duane a. bailey
  * @see SinglyLinkedList
  * @see DoublyLinkedList

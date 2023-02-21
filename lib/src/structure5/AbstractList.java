@@ -11,7 +11,7 @@ import java.util.Iterator;
  * Example usage:
  *
  * To place a copy of every unique parameter passed to a program into a 
- * List, we could use the following:
+ * IList, we could use the following:
  * <pre>
  * public static void main({@link java.lang.String String[]} arguments)
  * {

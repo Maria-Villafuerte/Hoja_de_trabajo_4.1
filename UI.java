@@ -29,9 +29,9 @@ public class UI {
         ArrayList<String> postfix = Read_Archivo._readfile("Datos.txt//");
         System.out.println("\n");
         System.out.println("¿Qué estructura de datos desea utilizar?");
-        System.out.println("\t1. Arrylist");
-        System.out.println("\t2. Doble Linked List");
-        System.out.println("\t3. Single Linked List");
+        System.out.println("\t1. Arraylist");
+        System.out.println("\t2. Doble Linked IList");
+        System.out.println("\t3. Single Linked IList");
         System.out.println("\t4. Vector");
         int type = sc.nextInt();
         System.out.println("\n");

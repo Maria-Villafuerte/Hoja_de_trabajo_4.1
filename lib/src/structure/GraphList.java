@@ -1,4 +1,4 @@
-// Graph, implemented with an Adjacency List
+// Graph, implemented with an Adjacency IList
 // (c) 1998, 2001 duane a. bailey
 
 package structure;

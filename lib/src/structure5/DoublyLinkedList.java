@@ -100,7 +100,7 @@ public class DoublyLinkedList<E> extends AbstractList<E>
      */
     public E removeFirst()
     {
-        Assert.pre(!isEmpty(),"List is not empty.");
+        Assert.pre(!isEmpty(),"IList is not empty.");
         DoublyLinkedNode<E> temp = head;
         head = head.next();
         if (head != null) {
@@ -140,7 +140,7 @@ public class DoublyLinkedList<E> extends AbstractList<E>
      */
     public E removeLast()
     {
-        Assert.pre(!isEmpty(),"List is not empty.");
+        Assert.pre(!isEmpty(),"IList is not empty.");
         DoublyLinkedNode<E> temp = tail;
         tail = tail.previous();
         if (tail == null) {
@@ -161,7 +161,7 @@ public class DoublyLinkedList<E> extends AbstractList<E>
 
     public E removeLast()
     {
-        Assert.pre(!isEmpty(),"List is not empty.");
+        Assert.pre(!isEmpty(),"IList is not empty.");
         DoublyLinkedNode<E> temp = tail;
         tail = tail.previous();
         tail.setNext(null);
@@ -220,7 +220,7 @@ public class DoublyLinkedList<E> extends AbstractList<E>
      * Any duplicates remain.  Because comparison is done with "equals,"
      * actual value removed is returned for inspection.
      *
-     * @pre value is not null.  List can be empty
+     * @pre value is not null.  IList can be empty
      * @post first element matching value is removed from list
      * 
      * @param value value to be removed.

@@ -42,7 +42,7 @@ import java.util.Iterator;
 public class MapList<K,V> implements Map<K,V>
 {
     /** 
-     * List for storing the entries in this map
+     * IList for storing the entries in this map
      */
     protected List<Association<K,V>> data;
     

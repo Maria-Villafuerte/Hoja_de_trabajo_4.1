@@ -9,7 +9,7 @@ package structure5;
  * Typical use:
  * <P>
  * <pre>
- *      List l = new SinglyLinkedList();
+ *      IList l = new SinglyLinkedList();
  *      // ...list gets built up...
  *      AbstractIterator li = l.iterator();
  *      while (li.hasNext())

@@ -1,5 +1,40 @@
+import java.util.Scanner;
+import java.util.ArrayList;
+
 public class UI {
+    static Scanner sc = new Scanner(System.in);
+
     public static void main(String[] args) {
         
-    }
+        System.out.println("\nBienvenido a la calculadora");
+        ArrayList<String> postfix = Read_Archivo._readfile("Datos.txt//");
+        System.out.println("\n");
+        System.out.println("¿Qué estructura de datos desea utilizar?");
+        System.out.println("\t1. Arrylist");
+        System.out.println("\t2. Doble Linked List");
+        System.out.println("\t3. Single Linked List");
+        System.out.println("\t4. Vector");
+        int type = sc.nextInt();
+        System.out.println("\n");
+        switch (type) {
+            case 1:
+                break;
+
+            case 2:
+
+                break;
+
+            case 3:
+
+                break;
+
+            case 4:
+                break;
+
+            default:
+                break;
+        }
+
+    }   
+
 }

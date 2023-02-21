@@ -15,21 +15,15 @@ public class Calculadora<T> {
     static PostfixCalculator calculadora = new PostfixCalculator();
     private static Stack<Integer> stack;
     static ArrayList<String> operaciones;
-    Stack pila = new Stack<T>();
 
-    /**
-     *
-     */
     public Calculadora() {
-
         stack = new Stack<Integer>();
-
     }
 
     /**
      * Metodo que guarda en la pila los elememtos del ArrayList y realiza las operaciones cuando encuentra un operando (solo con los primeros dos elementos)
-     * @param Firstpostfix Primera linea del documento txt 
-     * @return resultado de la pila 
+     * @param Firstpostfix Primera linea del documento txt
+     * @return resultado de la pila
      */
     public static int calculate(String Firstpostfix){
 
@@ -63,7 +57,6 @@ public class Calculadora<T> {
             } else {
                 stack.push(Integer.valueOf(num_op));
             }
-
         }
         return stack.pull();
     }

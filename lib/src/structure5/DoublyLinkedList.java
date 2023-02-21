@@ -1,15 +1,38 @@
 // Implementation of lists, using doubly linked elements.
 // (c) 1998, 2001 duane a. bailey
-import java.util.AbstractList;
+package structure5;
 import java.util.Iterator;
 /**
- * An implementation of lists that makes use of doubly linked elements.
- * This provided efficient implementation of both head and tail operations.
- * 
+ * An implementation of lists using doubly linked elements, similar to that of {@link java.util.LinkedList java.util.LinkedList}.
+ * <p>       
+ * This class is a basic implementation of the {@link List} interface.
+ * Operations accessing or modifying either the head or the tail of 
+ * the list execute in constant time.
+ * Doubly linked lists are less space-efficient than singly linked lists, 
+ * but tail-related operations are less costly.
+ * <p>
+ * Example usage:
+ *
+ * To place a copy of every unique parameter passed to a program into a 
+ * DoublyLinkedList,  we would use the following:
+ * <pre>
+ * public static void main({@link java.lang.String String[]} arguments)
+ * {
+ *     {@link DoublyLinkedList} argList = new {@link #DoublyLinkedList()};
+ *     for (int i = 0; i < arguments.length; i++){
+ *         if (!argList.{@link #contains(Object) contains(arguments[i])}){
+ *             argList.{@link #add(Object) add(arguments[i])};
+ *         }
+ *    }
+ *    System.out.println(argList);
+ * }
+ * </pre>
  * @version $Id: DoublyLinkedList.java 31 2007-08-06 17:19:56Z bailey $
  * @author, 2001 duane a. bailey
+ * @see SinglyLinkedList
+ * @see CircularList
  */
-public class DoublyLinkedList extends AbstractList
+public class DoublyLinkedList<E> extends AbstractList<E>
 {
     /**
      * Number of elements within list.
@@ -18,11 +41,11 @@ public class DoublyLinkedList extends AbstractList
     /**
      * Reference to head of list.
      */
-    protected DoublyLinkedNode head;
+    protected DoublyLinkedNode<E> head;
     /**
      * Reference to tail of list.
      */
-    protected DoublyLinkedNode tail;
+    protected DoublyLinkedNode<E> tail;
 
     /**
      * Constructs an empty list.
@@ -43,9 +66,8 @@ public class DoublyLinkedList extends AbstractList
      * @post adds value to beginning of list
      * 
      * @param value value to be added.
-     * @see #addToHead
      */
-    public void add(Object value)
+    public void add(E value)
     {
         addFirst(value);
     }
@@ -58,10 +80,10 @@ public class DoublyLinkedList extends AbstractList
      * 
      * @param value value to be added.
      */
-    public void addFirst(Object value)
+    public void addFirst(E value)
     {
         // construct a new element, making it head
-        head = new DoublyLinkedNode(value, head, null);
+        head = new DoublyLinkedNode<E>(value, head, null);
         // fix tail, if necessary
         if (tail == null) tail = head;
         count++;
@@ -76,10 +98,10 @@ public class DoublyLinkedList extends AbstractList
      * 
      * @return value removed from list.
      */
-    public Object removeFirst()
+    public E removeFirst()
     {
         Assert.pre(!isEmpty(),"List is not empty.");
-        DoublyLinkedNode temp = head;
+        DoublyLinkedNode<E> temp = head;
         head = head.next();
         if (head != null) {
             head.setPrevious(null);
@@ -99,10 +121,10 @@ public class DoublyLinkedList extends AbstractList
      * 
      * @param value value to be added.
      */
-    public void addLast(Object value)
+    public void addLast(E value)
     {
         // construct new element
-        tail = new DoublyLinkedNode(value, null, tail);
+        tail = new DoublyLinkedNode<E>(value, null, tail);
         // fix up head
         if (head == null) head = tail;
         count++;
@@ -116,10 +138,10 @@ public class DoublyLinkedList extends AbstractList
      * 
      * @return value removed from list.
      */
-    public Object removeLast()
+    public E removeLast()
     {
         Assert.pre(!isEmpty(),"List is not empty.");
-        DoublyLinkedNode temp = tail;
+        DoublyLinkedNode<E> temp = tail;
         tail = tail.previous();
         if (tail == null) {
             head = null;
@@ -130,17 +152,17 @@ public class DoublyLinkedList extends AbstractList
         return temp.value();
     }
     /*
-    public void addLast(Object value)
+    public void addLast(E value)
     {
         // construct new element
-        tail = new DoublyLinkedNode(value, null, tail);
+        tail = new DoublyLinkedNode<E>(value, null, tail);
         count++;
     }
 
-    public Object removeLast()
+    public E removeLast()
     {
         Assert.pre(!isEmpty(),"List is not empty.");
-        DoublyLinkedNode temp = tail;
+        DoublyLinkedNode<E> temp = tail;
         tail = tail.previous();
         tail.setNext(null);
         count--;
@@ -156,7 +178,7 @@ public class DoublyLinkedList extends AbstractList
      * 
      * @return A reference to first value in list.
      */
-    public Object getFirst()
+    public E getFirst()
     {
         return head.value();
     }
@@ -169,7 +191,7 @@ public class DoublyLinkedList extends AbstractList
      * 
      * @return A reference to last value in list.
      */
-    public Object getLast()
+    public E getLast()
     {
         return tail.value();
     }
@@ -183,9 +205,9 @@ public class DoublyLinkedList extends AbstractList
      * @param value A value to be found in list.
      * @return True if value is in list.
      */
-    public boolean contains(Object value)
+    public boolean contains(E value)
     {
-        DoublyLinkedNode finger = head;
+        DoublyLinkedNode<E> finger = head;
         while ((finger != null) && (!finger.value().equals(value)))
         {
             finger = finger.next();
@@ -204,9 +226,9 @@ public class DoublyLinkedList extends AbstractList
      * @param value value to be removed.
      * @return value actually removed.
      */
-    public Object remove(Object value)
+    public E remove(E value)
     {
-        DoublyLinkedNode finger = head;
+        DoublyLinkedNode<E> finger = head;
         while (finger != null &&
                !finger.value().equals(value))
         {
@@ -278,10 +300,10 @@ public class DoublyLinkedList extends AbstractList
      * @param i position of value to be retrieved.
      * @return value retrieved from location i (returns null if i invalid)
      */
-    public Object get(int i)
+    public E get(int i)
     {
         if (i >= size()) return null;
-        DoublyLinkedNode finger = head;
+        DoublyLinkedNode<E> finger = head;
         // search for ith element or end of list
         while (i > 0)
         {
@@ -301,10 +323,10 @@ public class DoublyLinkedList extends AbstractList
      * @param o new value
      * @return former value of ith entry of list.
      */
-    public Object set(int i, Object o)
+    public E set(int i, E o)
     {
         if (i >= size()) return null;
-        DoublyLinkedNode finger = head;
+        DoublyLinkedNode<E> finger = head;
         // search for ith element or end of list
         while (i > 0)
         {
@@ -312,7 +334,7 @@ public class DoublyLinkedList extends AbstractList
             i--;
         }
         // get old value, update new value
-        Object result = finger.value();
+        E result = finger.value();
         finger.setValue(o);
         return result;
     }
@@ -325,15 +347,15 @@ public class DoublyLinkedList extends AbstractList
      * @param i index of this new value
      * @param o value to be stored
      */
-    public void add(int i, Object o)
+    public void add(int i, E o)
     {
         Assert.pre((0 <= i) &&
                    (i <= size()), "Index in range.");
         if (i == 0) addFirst(o);
         else if (i == size()) addLast(o);
         else {
-            DoublyLinkedNode before = null;
-            DoublyLinkedNode after = head;
+            DoublyLinkedNode<E> before = null;
+            DoublyLinkedNode<E> after = head;
             // search for ith position, or end of list
             while (i > 0)
             {
@@ -342,8 +364,8 @@ public class DoublyLinkedList extends AbstractList
                 i--;
             }
             // create new value to insert in correct position
-            DoublyLinkedNode current =
-                new DoublyLinkedNode(o,after,before);
+            DoublyLinkedNode<E> current =
+                new DoublyLinkedNode<E>(o,after,before);
             count++;
             // make after and before value point to new value
             before.setNext(current);
@@ -360,14 +382,14 @@ public class DoublyLinkedList extends AbstractList
      * @param i position of value to be retrieved.
      * @return value retrieved from location i (returns null if i invalid)
      */
-    public Object remove(int i)
+    public E remove(int i)
     {
         Assert.pre((0 <= i) &&
                    (i < size()), "Index in range.");
         if (i == 0) return removeFirst();
         else if (i == size()-1) return removeLast();
-        DoublyLinkedNode previous = null;
-        DoublyLinkedNode finger = head;
+        DoublyLinkedNode<E> previous = null;
+        DoublyLinkedNode<E> finger = head;
         // search for value indexed, keep track of previous
         while (i > 0)
         {
@@ -392,10 +414,10 @@ public class DoublyLinkedList extends AbstractList
      * @param value value sought.
      * @return index (0 is first element) of value, or -1
      */
-    public int indexOf(Object value)
+    public int indexOf(E value)
     {
         int i = 0;
-        DoublyLinkedNode finger = head;
+        DoublyLinkedNode<E> finger = head;
         // search for value or end of list, counting along way
         while (finger != null && !finger.value().equals(value))
         {
@@ -422,10 +444,10 @@ public class DoublyLinkedList extends AbstractList
      * @param value value sought.
      * @return index (0 is first element) of value, or -1
      */
-    public int lastIndexOf(Object value)
+    public int lastIndexOf(E value)
     {
         int i = size()-1;
-        DoublyLinkedNode finger = tail;
+        DoublyLinkedNode<E> finger = tail;
         // search for last matching value, result is desired index
         while (finger != null && !finger.value().equals(value))
         {
@@ -448,9 +470,9 @@ public class DoublyLinkedList extends AbstractList
      * 
      * @return An iterator that traverses list from head to tail.
      */
-    public Iterator iterator()
+    public Iterator<E> iterator()
     {
-        return new DoublyLinkedListIterator(head);
+        return new DoublyLinkedListIterator<E>(head);
     }
 
     /**

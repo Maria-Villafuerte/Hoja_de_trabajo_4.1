@@ -22,7 +22,7 @@ public class Stack_DoublyLinkedList<T> extends Stack{
 
     @Override
     public Object pull() {
-        Object x = doublyLinkedList.get();
+        Object x = doublyLinkedList.get(0);
         return doublyLinkedList.remove(x);
     }
 

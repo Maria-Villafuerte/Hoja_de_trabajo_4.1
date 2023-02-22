@@ -3,12 +3,20 @@ import jdk.dynalink.beans.StaticClass;
 import java.util.Scanner;
 import java.util.ArrayList;
 
+/**
+ * @author
+ * Maria José Villafuerte
+ * @category Ejercicio #4
+ * Propósito: Ser la interfaz del usuario, mostrará la operación a realizar y el resultado, dichas operaciones pueden ser hechas con diferentes tipos de stacks y listas
+ * @date 21/02/2023
+ */
+
 public class UI {
     static Scanner sc = new Scanner(System.in);
     static Read_Archivo readFile = new Read_Archivo();
     static InfixToPostfix inf_post = new InfixToPostfix();
 
-    public void calcular() {
+    public static void calcular() {
         System.out.println("\nBienvenido a la Calculadora Postfix");
         ArrayList<String> postfix = readFile._readfile("Datos.txt//");
         ArrayList<String> prueba = inf_post.traslate(postfix);
@@ -22,9 +30,7 @@ public class UI {
         System.out.println("\nSe han hecho los cálculos de todo el archivo");
     }
 
-
         public static void main(String[] args) {
-
         System.out.println("\nBienvenido a la calculadora");
         ArrayList<String> postfix = Read_Archivo._readfile("Datos.txt//");
         System.out.println("\n");
@@ -37,18 +43,25 @@ public class UI {
         System.out.println("\n");
         switch (type) {
             case 1:
-
+                Factory_Stack.getInstace(2);
+                calcular();
                 break;
 
             case 2:
-
+                Factory_Stack.getInstace(3);
+                Factory_List.getInstace(2);
+                calcular();
                 break;
 
             case 3:
-
+                Factory_Stack.getInstace(3);
+                Factory_List.getInstace(1);
+                calcular();
                 break;
 
             case 4:
+                Factory_Stack.getInstace(1);
+                calcular();
                 break;
 
             default:

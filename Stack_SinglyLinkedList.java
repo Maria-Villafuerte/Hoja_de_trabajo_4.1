@@ -20,7 +20,7 @@ public class Stack_SinglyLinkedList extends Stack{
 
     @Override
     public Object pull() {
-        Object x= stackSinglyLinkedList.get();
+        Object x= stackSinglyLinkedList.get(0);
         return stackSinglyLinkedList.remove(x);
     }
 

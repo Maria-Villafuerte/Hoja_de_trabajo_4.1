@@ -15,10 +15,13 @@ public class Calculadora<T> {
     private static Stack<Integer> stack;
     static ArrayList<String> operaciones;
 
+
     public Calculadora() {
         stack = new Stack<Integer>();
     }
 
+    //Uso de SingleTone
+    private static Calculadora instance;
     /**
      * Metodo que guarda en la pila los elememtos del ArrayList y realiza las operaciones cuando encuentra un operando (solo con los primeros dos elementos)
      * @param Firstpostfix Primera linea del documento txt
